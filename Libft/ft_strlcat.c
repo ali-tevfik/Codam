@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/16 11:27:37 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/16 16:14:42 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:49:17 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t len_dst;
-	size_t len_src;
+	size_t	i;
+	size_t	len_dst;
+	size_t	len_src;
 
 	len_src = ft_strlen(src);
 	len_dst = ft_strlen(dst);

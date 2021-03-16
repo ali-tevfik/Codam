@@ -6,16 +6,16 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 11:19:34 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/21 14:36:31 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:51:28 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static	int		control_func(char const *s1, char const *set, int x, int i)
+static	int	control_func(char const *s1, char const *set, int x, int i)
 {
-	int control;
+	int	control;
 
 	control = 0;
 	while (*(set + x) != '\0')
@@ -30,11 +30,11 @@ static	int		control_func(char const *s1, char const *set, int x, int i)
 	return (control);
 }
 
-static	int		endcheck(char const *s1, char const *set, int old_i)
+static	int	endcheck(char const *s1, char const *set, int old_i)
 {
-	int i;
-	int x;
-	int control;
+	int	i;
+	int	x;
+	int	control;
 
 	control = 0;
 	i = ft_strlen(s1);
@@ -56,11 +56,11 @@ static	int		endcheck(char const *s1, char const *set, int old_i)
 	return (ft_strlen(s1) - i);
 }
 
-static	int		first_check(char const *s1, char const *set)
+static	int	first_check(char const *s1, char const *set)
 {
-	int control;
-	int x;
-	int i;
+	int	control;
+	int	x;
+	int	i;
 
 	x = 0;
 	i = 0;
@@ -85,11 +85,11 @@ static	int		first_check(char const *s1, char const *set)
 	return (i);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*s;
-	unsigned	int	first;
-	unsigned	int	end;
+	unsigned int	first;
+	unsigned int	end;
 	int				i;
 
 	if (s1 == NULL)

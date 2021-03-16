@@ -6,15 +6,15 @@
 /*   By: adoner <marvin@codam.nl>                     +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/15 13:32:23 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/16 13:42:58 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:45:05 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static	int		len_find(int n)
+static	int	len_find(int n)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (n < 0)
@@ -29,7 +29,7 @@ static	int		len_find(int n)
 
 static	char	*send_zero(void)
 {
-	char *a;
+	char	*a;
 
 	a = (char *)malloc(2);
 	if (!a)
@@ -65,7 +65,7 @@ static	char	*send_max(void)
 
 static	char	*convert(int control, int len, int n)
 {
-	char *a;
+	char	*a;
 
 	a = (char *)malloc(len + 1);
 	if (!a)
@@ -85,10 +85,10 @@ static	char	*convert(int control, int len, int n)
 	return (a);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int len;
-	int control;
+	int	len;
+	int	control;
 
 	if (n == 0)
 		return (send_zero());

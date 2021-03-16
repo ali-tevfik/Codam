@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/16 11:28:00 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/16 11:28:01 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:49:40 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t				i;
-	unsigned	char	*st1;
-	unsigned	char	*st2;
+	size_t			i;
+	unsigned char	*st1;
+	unsigned char	*st2;
 
 	st1 = (unsigned char *)s1;
 	st2 = (unsigned char*)s2;

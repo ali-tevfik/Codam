@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/16 11:26:35 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/21 14:36:28 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:47:37 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t			i;
-	char			*dst1;
-	const	char	*src1;
+	size_t		i;
+	char		*dst1;
+	const char	*src1;
 
 	dst1 = (char *)dst;
 	i = 0;

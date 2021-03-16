@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/16 11:27:51 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/16 11:27:52 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:49:25 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*s != '\0')

@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 16:39:09 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/21 14:26:48 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:48:10 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static	int	check(int nb, int fd)
 	return (nb);
 }
 
-void		ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char				realint;
-	int					nb2;
-	long	double		i;
-	int					aa;
+	char			realint;
+	int				nb2;
+	long double		i;
+	int				aa;
 
 	i = 1;
 	n = check(n, fd);

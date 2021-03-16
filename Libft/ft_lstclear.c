@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/15 12:42:57 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/15 16:44:52 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:45:38 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *oldlst;
+	t_list	*oldlst;
 
 	if (*lst == NULL)
 		return ;

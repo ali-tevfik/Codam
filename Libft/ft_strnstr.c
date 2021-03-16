@@ -6,17 +6,17 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/16 11:28:06 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/16 13:29:40 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:50:51 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stddef.h>
 
-static	int		check(const char *haystack,
-const char *needle, size_t len, size_t i)
+static	int	check(const char *haystack,
+	const char *needle, size_t len, size_t i)
 {
-	size_t x;
+	size_t	x;
 
 	x = 0;
 	if (needle == 0)
@@ -34,10 +34,10 @@ const char *needle, size_t len, size_t i)
 		return (0);
 }
 
-char			*ft_strnstr(const char *haystack,
+char	*ft_strnstr(const char *haystack,
 const char *needle, size_t len)
 {
-	size_t x;
+	size_t	x;
 
 	x = 0;
 	if (*(needle) == '\0')

@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/16 11:28:23 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/16 13:39:44 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:51:43 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static	char	*biggerstart(void)
 	return (c);
 }
 
-char			*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*c;
 	size_t	i;

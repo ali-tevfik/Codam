@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/15 11:19:02 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/23 11:57:43 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:45:29 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *oldlst;
+	t_list	*oldlst;
 
 	if (!new)
 		return ;

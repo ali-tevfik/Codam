@@ -6,7 +6,7 @@
 /*   By: adoner <marvin@codam.nl>                     +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/15 13:33:02 by adoner        #+#    #+#                 */
-/*   Updated: 2020/12/06 13:46:26 by catalina      ########   odam.nl         */
+/*   Updated: 2021/02/24 22:48:59 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static	char	**delete_item(char **s1, int count)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < count)
@@ -27,9 +27,9 @@ static	char	**delete_item(char **s1, int count)
 	return (NULL);
 }
 
-static	int		skip_delim(char const *s, char c)
+static	int	skip_delim(char const *s, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] == c && s[i] != '\0')
@@ -37,7 +37,7 @@ static	int		skip_delim(char const *s, char c)
 	return (i);
 }
 
-static	int		how_many_word(const char *s, char c)
+static	int	how_many_word(const char *s, char c)
 {
 	int		count;
 	int		i;
@@ -53,9 +53,9 @@ static	int		how_many_word(const char *s, char c)
 	return (count);
 }
 
-static	int		find_word_size(char const *s, int i, char c)
+static	int	find_word_size(char const *s, int i, char c)
 {
-	int count_size;
+	int	count_size;
 
 	count_size = 0;
 	while (s[i] != c && s[i] != '\0')
@@ -66,7 +66,7 @@ static	int		find_word_size(char const *s, int i, char c)
 	return (count_size);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**s1;
 	int		i;
@@ -93,14 +93,4 @@ char			**ft_split(char const *s, char c)
 	}
 	s1[size_word_count] = NULL;
 	return (s1);
-}
-#include <stdio.h>
-int main(){
-	int i;
-	i = 0;
-	char **a=ft_split("bbbbsabbb bbbbnazmi",'b');
-	while(i <3){
-		printf("%s\n",a[i]);
-		i++;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/21 14:32:36 by adoner        #+#    #+#                 */
-/*   Updated: 2020/11/21 14:32:37 by adoner        ########   odam.nl         */
+/*   Updated: 2021/02/24 22:42:53 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 static	int	checkspace(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*(s + i) != '\0')
 	{
-		if (*(s + i) == '\t' || *(s + i) == '\n' || *(s + i) == '\f' ||
-		*(s + i) == '\r' || *(s + i) == '\v' || *(s + i) == ' ')
+		if (*(s + i) == '\t' || *(s + i) == '\n' || *(s + i) == '\f'
+			|| *(s + i) == '\r' || *(s + i) == '\v' || *(s + i) == ' ')
 			i++;
 		else
 			break ;
@@ -29,15 +29,17 @@ static	int	checkspace(const char *s)
 	return (i);
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int total;
-	int control;
+	int	i;
+	int	total;
+	int	control;
 
 	i = checkspace(str);
 	control = 1;
 	total = 0;
+	if (str[0] == '0')
+		return (0);
 	if (*(str + i) == '-')
 	{
 		control = -1;
