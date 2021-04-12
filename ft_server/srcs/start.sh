@@ -1,0 +1,1 @@
+mkdir /var/www/localhost && touch /var/www/localhost/index.php
