@@ -1,24 +1,49 @@
 <!doctype html>
 <html>
 <head>
+<style>
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: table
+}
+.img{
+   margin: 30px;
+}
+.main_div{
+    display: table-cell;
+    text-align: center;
+    padding-top: 150px;
+}
+.button {
+    margin: 0px 10px 0px 10px;
+    width: 100px;
+    height: 50px;
+}
+
+h2{
+    margin-bottom: 25px;
+}
+</style>
 <meta charset="utf-8">
 <title>adoner Ft_server</title>
-<link href="css.css" rel="stylesheet">    
 </head>
-    
+
 <body>
     <div class="main_div">
     <h2>adoner</h2>
     <div class="img">
         <image src="https://cdn.intra.42.fr/users/small_adoner.jpg"/>
-    </div> 
+    </div>
     <div>
         <h3>Ft_server Project</h3>
     </div>
     <div>
-        <button class="button">php</button>
-        <button class="button">wordpress</button>
-        <button class="button">php</button>
+        <button onclick="location.href='https://localhost/phpmyadmin'" type="button" class="button">php</button>
+        <button onclick="location.href='https://localhost/wordpress'" type="button" class="button">wordpress</button>
     </div>
 </div>
 </body>
