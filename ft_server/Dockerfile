@@ -15,6 +15,7 @@ RUN apt-get update &&\
                     php-pear\
                     php-zip\
                     php-xml\
+                    curl \
                     php-curl -y
 
 # Copy necessary files to your image
@@ -22,9 +23,9 @@ COPY ./srcs/start.sh ./
 COPY ./srcs/index.html ./tmp/index.html
 COPY ./srcs/nginx-conf ./tmp/nginx-conf
 COPY ./srcs/config.inc.php ./tmp/config.inc.php
-COPY ./srcs/wordpress.sql /var/www/
+COPY ./srcs/wordpress.sql /bin/
 COPY ./srcs/wp-config.php ./tmp/wp-config.php
 EXPOSE 80 443
 
 
-ENTRYPOINT ["sh","start.sh"]
+CMD ["sh","start.sh"]
