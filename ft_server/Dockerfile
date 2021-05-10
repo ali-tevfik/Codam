@@ -23,7 +23,7 @@ COPY ./srcs/start.sh ./
 COPY ./srcs/index.html ./tmp/index.html
 COPY ./srcs/nginx-conf ./tmp/nginx-conf
 COPY ./srcs/config.inc.php ./tmp/config.inc.php
-COPY ./srcs/wordpress.sql /bin/
+COPY ./srcs/wordpress.sql /var/www/
 COPY ./srcs/wp-config.php ./tmp/wp-config.php
 EXPOSE 80 443
 

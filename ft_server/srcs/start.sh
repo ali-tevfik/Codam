@@ -32,11 +32,11 @@ mv ./tmp/wp-config.php /var/www/localhost/wordpress/
 
 
 # Configure mysql
-service mysql start && mysql < /bin/wordpress.sql && /
+service mysql start && mysql < /var/www/wordpress.sql && /
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
 chmod +x wp-cli.phar && \
 mv wp-cli.phar /usr/local/bin/wp && \
-cd /var/www/website/ && \
+cd /var/www/ && \
 mkdir wordpress && \
 cd wordpress && \
 wp core download --allow-root && \
