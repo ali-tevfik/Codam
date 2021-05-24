@@ -6,7 +6,7 @@
 #    By: catalina <catalina@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/16 22:03:59 by catalina      #+#    #+#                  #
-#    Updated: 2021/05/24 15:20:41 by adoner        ########   odam.nl          #
+#    Updated: 2021/05/25 00:07:27 by catalina      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC =	push_swap.c/
 		rules_reverse.c/
 		rules_rotate.c/
 		rules_swap.c/
-		ft_isdigit_str.c
+		ft_isdigit_str.c/
+		check_sort.c
 
 
 

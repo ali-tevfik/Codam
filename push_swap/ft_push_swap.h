@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/19 17:33:07 by catalina      #+#    #+#                 */
-/*   Updated: 2021/05/24 19:20:10 by adoner        ########   odam.nl         */
+/*   Updated: 2021/05/25 00:38:59 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,14 @@ int ft_isdigit_str(char **c);
 t_array swap_sa(t_array array);
 t_array swap_sb(t_array array);
 t_array swap_ss(t_array array);
+t_array rules_push_pb(t_array big_array);
 t_array rules_push_pa(t_array big_array);
+t_array rules_rotate_ra(t_array array);
+t_array rules_rotate_rb(t_array array);
+t_array rules_rotate_rr(t_array array);
+t_array rules_reverse_rrr(t_array array);
+t_array rules_reverse_rra(t_array array);
+t_array rules_reverse_rrb(t_array array);
+int check_sort_a(t_array array);
+int check_sort_b(t_array array);
 #endif
