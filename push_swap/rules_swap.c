@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 16:38:29 by adoner        #+#    #+#                 */
-/*   Updated: 2021/05/24 19:42:09 by adoner        ########   odam.nl         */
+/*   Updated: 2021/05/25 13:07:57 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ t_array swap_sb(t_array array)
     if (len == 0 || len == 1)
         return (array);
     i = 2;
-    printf("len %d", len);
     new_array = (int*)malloc(len * sizeof(int));
     new_array[0] = array.array_b[1];
     new_array[1] = array.array_b[0];

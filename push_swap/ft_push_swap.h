@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/19 17:33:07 by catalina      #+#    #+#                 */
-/*   Updated: 2021/05/25 00:38:59 by catalina      ########   odam.nl         */
+/*   Updated: 2021/05/25 17:33:42 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ typedef struct  s_array
     int         len_array_b;
 }               t_array;
 
+typedef struct s_result
+{
+    int         where;
+    int         result;
+}               t_result;
+
 int main(int argc, char **argv);
 int ft_isdigit_str(char **c);
 t_array swap_sa(t_array array);
@@ -39,6 +45,6 @@ t_array rules_rotate_rr(t_array array);
 t_array rules_reverse_rrr(t_array array);
 t_array rules_reverse_rra(t_array array);
 t_array rules_reverse_rrb(t_array array);
-int check_sort_a(t_array array);
-int check_sort_b(t_array array);
+t_result check_sort_a(t_array array);
+t_result check_sort_b(t_array array);
 #endif

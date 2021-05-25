@@ -28,10 +28,141 @@ int* convert_int(char **argv, int len)
     }
     return (array);
 }
+
+t_array find_pivot(t_array array)
+{
+    int i = 0;
+    int toplam = 0;
+    while (i < array.len_array_a)
+    {
+        toplam  += array.array_a[i];
+        i++;
+
+    }
+    int ortalama = toplam / array.len_array_a;
+    printf("ortalama = %d  toplam sayi = %d\n",ortalama,array.len_array_a);
+    i = 0;
+    while (i < array.len_array_a)
+    {
+
+        if (ortalama >= array.array_a[0]){
+            array = rules_push_pb(array);
+            printf("push b %d\n",array.array_b[0]);
+            i--;
+          //  printf("\narray b %d\n",array.array_b[0]);
+          }
+        else{
+            printf("push a %d\n",array.array_a[0]);
+           array = rules_rotate_ra(array);
+
+            }
+        i++;
+    }
+    printf("\n");
+
+    return (array);
+}
+
+//sort a
+t_array sort_bigger(t_array array)
+{
+    t_result result;
+    int abc = 0;
+    if (check_sort_a(array).result == 1)
+        return (array);
+    while (1)
+    {
+        abc = 0;
+        while (abc < array.len_array_a)
+            printf("son hali hali %d\n",array.array_a[abc++]);
+        printf("\n\n");
+        if (array.array_a[0] > array.array_a[1]){
+            array = swap_sa(array);
+            printf("swap sa = %d %d\n",array.array_a[0],array.array_a[1]);
+            }
+         else if (array.array_a[array.len_array_a - 1] < array.array_a[array.len_array_a - 2]){
+            array = rules_reverse_rra(array);
+            printf("reverse ra = %d %d\n",array.array_a[array.len_array_a - 1],array.array_a[array.len_array_a - 2]);
+            }
+        else if (array.array_a[0] > array.array_a[array.len_array_a - 1]){
+            array = rules_rotate_ra(array);
+            printf("rules ra = %d %d\n",array.array_a[0],array.array_a[array.len_array_a-1]);
+            }
+          else if ((result = check_sort_a(array)).result != 1)
+        {
+            abc = 0;
+            printf("\nresult is %d\n\n",result.where);
+            while (abc < result.where)
+            {
+                array = rules_rotate_ra(array);
+                abc++;
+            }
+            
+        }
+        else
+            break;
+       }
+       printf("--------------------------------\n");
+    return (array);
+}
+
+//sort b
+t_array sort_smaller(t_array array)
+{
+    int i;
+    int x;
+    t_result result;
+    int abc;
+    x = array.len_array_b;
+    i = 0;
+    while (1)
+    {
+         abc = 0;
+        while (abc < array.len_array_b)
+            printf("son hali hali %d\n",array.array_b[abc++]);
+        printf("\n\n");
+        if (array.array_b[0] < array.array_b[1]){
+            array = swap_sb(array);
+             printf("swap sb = %d %d\n",array.array_b[0],array.array_b[1]);}
+        else if (array.array_b[array.len_array_b - 1] > array.array_b[array.len_array_b - 2])
+        {
+            array = rules_reverse_rrb(array);
+             printf("reverse rb = %d %d\n",array.array_b[array.len_array_b - 1],array.array_b[array.len_array_b - 2]);}
+        else if (array.array_b[0] < array.array_b[array.len_array_b - 1]){
+            array = rules_rotate_rb(array);
+
+            printf("rules rb = %d %d\n",array.array_b[0],array.array_b[array.len_array_b-1]);
+            }
+        else if ((result = check_sort_b(array)).result != 1)
+        {
+            abc = 0;
+            printf("\nresult is %d\n\n",result.where);
+            while (abc < result.where)
+            {
+                array = rules_rotate_rb(array);
+                abc++;
+            }
+            
+        }
+        else 
+            break;
+       }
+        printf("x = %d i = %d\n\n",x,i);
+        while (x > i)
+        {
+            array = rules_push_pa(array);
+            i++;
+        }
+
+    printf("--------------------------------\n");
+    return (array);
+}
+
 int main(int argc, char **argv)
 {
     t_array a;
     int i =0;
+
 
     if (!ft_isdigit_str(argv))
     {
@@ -44,77 +175,18 @@ int main(int argc, char **argv)
     a.len_array_b = 0;
 
 
-    i = 0;
-    int toplam = 0;
-    printf("first\n");
-    while (i < a.len_array_a)
+
+  
+    a = find_pivot(a);
+    a = sort_bigger(a);
+    a = sort_smaller(a);
+    int abc = 0;
+    while (abc < argc - 1)
     {
-        toplam  += a.array_a[i];
-        printf(" %d \t",a.array_a[i++]);
-
+        printf("a = %d\n",a.array_a[abc]);
+        abc++;
     }
-    int ortalama = toplam / a.len_array_a;
-    i = 0;
-    while (i < a.len_array_a)
-    {
-        if (ortalama >= a.array_a[0])
-            a = rules_push_pb(a);
-        else
-           a = rules_rotate_ra(a);
-        i++;
-    }
-
-    int aa =0;
-    int a_ort = 0;
-    while(aa < a.len_array_a)
-        a_ort += a.array_a[aa++];
-    a_ort /= a.len_array_a;
-    aa = 0;
-    while (1)
-    {
-        if (a.array_a[aa] > a_ort)
-            a = rules_rotate_ra(a);
-        else if (a.array_a[aa] > a.array_a[aa + 1])
-            a = swap_sa(a);
-        else
-            break;
-
-    }
-
-     aa =0;
-    int b_ort = 0;
-    while(aa < a.len_array_b)
-        b_ort += a.array_b[aa++];
-    b_ort /= a.len_array_b;
-    aa = 0;
-    while (1)
-    {
-        if (a.array_b[0] < b_ort)
-            a = rules_reverse_rrb(a);
-        else if (a.array_b[aa] < a.array_b[aa + 1])
-        {
-            a =rules_rotate_rb(a);
-            a = swap_sb(a);
-            a =rules_reverse_rrb(a);
-        }
-        else if (a.array_b[0] < a.array_b[a.len_array_b])
-            a = rules_rotate_rb(a);
-        else if (a.len_array_b > aa)
-            aa++;
-        else
-            break;
-
-    }
-    int bc = 0;
-    while(a.len_array_b + 1 >=bc)
-    {
-        a = rules_push_pa(a);
-        bc++;
-    }
-
-    printf("\n\nORTALAMA = %d\n\n",ortalama);
-    //printf("b = %d %d %d\n\n",a.array_b[0],a.array_b[1],a.array_b[2]);
-    printf("a = %d %d %d %d %d %d ",a.array_a[0],a.array_a[1],a.array_a[2],a.array_a[3],a.array_a[4],a.array_a[5]);
+   // printf("\na = %d %d %d %d %d %d ",a.array_a[0],a.array_a[1],a.array_a[2],a.array_b[0],a.array_a[2],a.array_a[3]);
     // a = swap_sa(a);
     // a = rules_push_pb(a);
     // a = rules_push_pb(a);

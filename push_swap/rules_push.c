@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 17:06:51 by adoner        #+#    #+#                 */
-/*   Updated: 2021/05/25 00:04:44 by catalina      ########   odam.nl         */
+/*   Updated: 2021/05/25 18:00:14 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ t_array rules_push_pa(t_array arrays)
         return (arrays);
     arrays.len_array_a++;
     arrays.len_array_b--;
-    new_arrays.array_a = (int*)malloc(arrays.len_array_a * sizeof(int));
     new_arrays.array_b = (int*)malloc(arrays.len_array_b * sizeof(int));
-    while (arrays.len_array_b >= i)
+    new_arrays.array_a = (int*)malloc(arrays.len_array_a * sizeof(int));
+    
+    while (arrays.len_array_b >= i && arrays.len_array_b > 0)
     {
         new_arrays.array_b[i - 1] = arrays.array_b[i];
         i++;
@@ -39,8 +40,12 @@ t_array rules_push_pa(t_array arrays)
         i++;
     }
     free(arrays.array_a);
-    free(arrays.array_b);
-    new_arrays.len_array_b = arrays.len_array_b;
+    if (arrays.len_array_b > 0)
+    {
+        free(arrays.array_b);
+        new_arrays.len_array_b = arrays.len_array_b;
+    }
+    
     new_arrays.len_array_a = arrays.len_array_a;
     return (new_arrays);
 }
