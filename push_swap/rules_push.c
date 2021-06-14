@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 17:06:51 by adoner        #+#    #+#                 */
-/*   Updated: 2021/05/25 18:00:14 by adoner        ########   odam.nl         */
+/*   Updated: 2021/06/14 13:04:51 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ t_array rules_push_pa(t_array arrays)
         return (arrays);
     arrays.len_array_a++;
     arrays.len_array_b--;
-    new_arrays.array_b = (int*)malloc(arrays.len_array_b * sizeof(int));
-    new_arrays.array_a = (int*)malloc(arrays.len_array_a * sizeof(int));
-    
+    new_arrays.array_b = (int*)malloc((arrays.len_array_b + 1) * sizeof(int));
+    new_arrays.array_a = (int*)malloc((arrays.len_array_a + 1) * sizeof(int));
+
     while (arrays.len_array_b >= i && arrays.len_array_b > 0)
     {
         new_arrays.array_b[i - 1] = arrays.array_b[i];
@@ -40,12 +40,10 @@ t_array rules_push_pa(t_array arrays)
         i++;
     }
     free(arrays.array_a);
-    if (arrays.len_array_b > 0)
-    {
+    if (arrays.array_b > 0)
         free(arrays.array_b);
-        new_arrays.len_array_b = arrays.len_array_b;
-    }
-    
+    new_arrays.len_array_b = arrays.len_array_b;
+
     new_arrays.len_array_a = arrays.len_array_a;
     return (new_arrays);
 }
@@ -62,8 +60,8 @@ t_array rules_push_pb(t_array arrays)
         return (arrays);
     arrays.len_array_a--;
     arrays.len_array_b++;
-    new_arrays.array_a = (int*)malloc(arrays.len_array_a * sizeof(int));
-    new_arrays.array_b = (int*)malloc(arrays.len_array_b * sizeof(int));
+    new_arrays.array_a = (int*)malloc((arrays.len_array_a + 1) * sizeof(int));
+    new_arrays.array_b = (int*)malloc((arrays.len_array_b + 1)* sizeof(int));
     while (arrays.len_array_a >= i)
     {
         new_arrays.array_a[i - 1] = arrays.array_a[i];
@@ -76,7 +74,8 @@ t_array rules_push_pb(t_array arrays)
         new_arrays.array_b[i + 1] = arrays.array_b[i];
         i++;
     }
-    free(arrays.array_a);
+    if (arrays.len_array_a > 0)
+        free(arrays.array_a);
     free(arrays.array_b);
     new_arrays.len_array_a = arrays.len_array_a;
     new_arrays.len_array_b = arrays.len_array_b;

@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 23:20:11 by catalina      #+#    #+#                 */
-/*   Updated: 2021/05/24 23:46:58 by catalina      ########   odam.nl         */
+/*   Updated: 2021/06/14 13:05:04 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_array rules_reverse_rra(t_array array)
 	if (array.len_array_a <= 0)
 		return (array);
 	i = 1;
-	new_array = (int*)malloc((array.len_array_a) * sizeof(int));
+	new_array = (int*)malloc((array.len_array_a + 1) * sizeof(int));
 	new_array[0] = array.array_a[array.len_array_a - 1];
 	while (i < array.len_array_a)
 	{
@@ -29,6 +29,7 @@ t_array rules_reverse_rra(t_array array)
 	}
 	free(array.array_a);
 	array.array_a = new_array;
+	int abc = 0;
 	return (array);
 }
 

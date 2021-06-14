@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/19 17:33:07 by catalina      #+#    #+#                 */
-/*   Updated: 2021/05/25 17:33:42 by adoner        ########   odam.nl         */
+/*   Updated: 2021/06/03 00:25:43 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 typedef struct  s_array
 {
-    int*        array_a;
-    int*        array_b;
+    int        *array_a;
+    int        *array_b;
     int         len_array_a;
     int         len_array_b;
 }               t_array;

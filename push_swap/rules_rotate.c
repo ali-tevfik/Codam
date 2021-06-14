@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 23:20:11 by catalina      #+#    #+#                 */
-/*   Updated: 2021/05/24 23:44:34 by catalina      ########   odam.nl         */
+/*   Updated: 2021/06/14 13:05:27 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_array rules_rotate_ra(t_array array)
 	if (array.len_array_a <= 0)
 		return (array);
 	i = 0;
-	new_array = (int*)malloc((array.len_array_a) * sizeof(int));
+	new_array = (int*)malloc((array.len_array_a + 1) * sizeof(int));
 
 	new_array[array.len_array_a - 1] = array.array_a[0];
 	while (i < array.len_array_a - 1)
@@ -41,14 +41,15 @@ t_array rules_rotate_rb(t_array array)
 	if (array.len_array_b <= 0)
 		return (array);
 	i = 0;
-	new_array = (int*)malloc((array.len_array_b) * sizeof(int));
+	new_array = (int*)malloc((array.len_array_b + 1) * sizeof(int));
 	new_array[array.len_array_b - 1] = array.array_b[0];
 	while (i < array.len_array_b - 1)
 	{
 		new_array[i] = array.array_b[i + 1];
 		i++;
 	}
-	free(array.array_b);
+	if (array.array_b != 0)
+		free(array.array_b);
 	array.array_b = new_array;
 	return (array);
 }
