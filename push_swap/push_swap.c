@@ -221,6 +221,7 @@ t_array sort_smaller(t_array array)
             break;
     }
     array = rules_push_pa(array);
+
     return (array);
 }
 
@@ -233,15 +234,18 @@ int where_small_digit(t_array array)
     count = 0;
     i = 0;
     small_digit = array.array_a[0];
-    while (array.len_array_a >= i)
+    while (array.len_array_a > i)
     {
-        if (small_digit < array.array_a[i])
+        printf("\ndigit is %d\n",array.array_a[i]);
+        if (small_digit > array.array_a[i])
         {
+            printf("\nsmall digit is %d\n",array.array_a[i]);
             small_digit = array.array_a[i];
             count = i;
         }
         i++;
     }
+    printf("\n count is %d digit is %d small digit is %d\n",count,array.array_a[count],small_digit);
     return (count);
 }
 t_array digit_5_speaciel(t_array array)
@@ -250,7 +254,14 @@ t_array digit_5_speaciel(t_array array)
  
     small_digit_count = where_small_digit(array);
 
-    printf("count %d\n\n\n",small_digit_count);
+    //printf("count %d\n\n\n",small_digit_count);
+       int abc= 0;
+    while(array.len_array_a > abc)
+    {
+        printf("%d\n",array.array_a[abc]);
+        abc++;
+    }
+    printf("--------------\n");
     if (small_digit_count > 3)
     {
         while (5 - small_digit_count >= 0)
@@ -261,22 +272,34 @@ t_array digit_5_speaciel(t_array array)
     }
     else
     {
-        while (small_digit_count >= 0)
+        while (5 - small_digit_count > 0)
         {
             array = rules_reverse_rra(array);
-            small_digit_count--;
+            small_digit_count++;
         }
     }
     array = rules_push_pb(array);
+     abc= 0;
+    while(array.len_array_a > abc)
+    {
+        printf("%d\n",array.array_a[abc]);
+        abc++;
+    }
+    printf("--------------\n");
     if (array.len_array_a > 3)
         array = digit_5_speaciel(array);
     else
     {
         array = digit_3_speaciel(array);
         array = sort_smaller(array);
-        array = rules_push_pa(array);
-        array = rules_push_pa(array);
     }
+     abc= 0;
+    while(array.len_array_a > abc)
+    {
+        printf("%d\n",array.array_a[abc]);
+        abc++;
+    }
+    printf("--------------\n");
 
     return (array);
 }
