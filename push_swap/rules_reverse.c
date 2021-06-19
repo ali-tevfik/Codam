@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 23:20:11 by catalina      #+#    #+#                 */
-/*   Updated: 2021/06/14 13:05:04 by catalina      ########   odam.nl         */
+/*   Updated: 2021/06/19 12:20:15 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_array rules_reverse_rra(t_array array)
 	int* new_array;
 	int i;
 
+    ft_putendl_fd("rra",1);
 	if (array.len_array_a <= 0)
 		return (array);
 	i = 1;
@@ -38,6 +39,7 @@ t_array rules_reverse_rrb(t_array array)
 	int* new_array;
 	int i;
 
+    ft_putendl_fd("rrb",1);
 	if (array.len_array_b <= 0)
 		return (array);
 	i = 1;

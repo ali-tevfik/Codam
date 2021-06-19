@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 16:38:29 by adoner        #+#    #+#                 */
-/*   Updated: 2021/06/14 12:36:05 by catalina      ########   odam.nl         */
+/*   Updated: 2021/06/19 12:20:32 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ t_array swap_sa(t_array array)
     int* new_array;
     int i;
     int len;
-
+    
+    ft_putendl_fd("sa",1);
     len = array.len_array_a;
     i = 2;
     new_array = (int*)malloc((len + 1) * sizeof(int));
@@ -39,6 +40,7 @@ t_array swap_sb(t_array array)
     int i;
     int len;
 
+    ft_putendl_fd("sb",1);
     len = 0;
     if (array.array_b)
         len = array.len_array_b;

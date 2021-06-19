@@ -1,59 +1,53 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: catalina <catalina@student.codam.nl>         +#+                      #
-#                                                    +#+                       #
-#    Created: 2021/01/16 22:03:59 by catalina      #+#    #+#                  #
-#    Updated: 2021/05/25 00:07:27 by catalina      ########   odam.nl          #
-#                                                                              #
-# **************************************************************************** #
+GREEN = \033[38;5;2m
+NORMAL = \033[38;5;255m
+RED = \033[38;5;1m
+BLUE = \033[38;5;4m
 
-CC = gcc
+SRCS	=	check_sort.c\
+			ft_isdigit_str.c\
+			push_swap.c\
+			rules_push.c\
+			rules_reverse.c\
+			rules_rotate.c\
+			rules_swap.c
 
-CFLAGS = -Wall -Wextra -Werror
+OBJS	= $(SRCS:.c=.o)
 
-NAME = push_swap.a
+NAME	= push_swap
 
-LIBFT = Libft/libft.a
+GCC		= gcc
 
+FLAGS	= -Wall -Wextra -Werror -fsanitize=address -g
 
-HEADER_FILE	= 	$(SRC_PATH)ft_printf.h
+HEADER_FILE = push_swap.h
 
-SRC =	push_swap.c/
-		rules_push.c/
-		rules_reverse.c/
-		rules_rotate.c/
-		rules_swap.c/
-		ft_isdigit_str.c/
-		check_sort.c
+LIBFT_DIR = libft
 
+LIBFT_LIB = libft.a
 
+all:	$(NAME)
 
-SRC_OBJ 	:= 	$(SRC:%.c=.o)
-
-all: $(NAME)
-
-$(NAME): $(LIBFT) $(SRC_OBJ)
-	cp $< $@
-	ar cr $@ $(SRC_OBJ)
+$(NAME):	$(OBJS)
+	$(MAKE) bonus -C $(LIBFT_DIR)
+	$(GCC) $(FLAGS) -o $(NAME) $(OBJS) $(LIBFT_DIR)/$(LIBFT_LIB)
 
 %.o: %.c $(HEADER_FILE)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(LIBFT):
-	make bonus -C libft
+	@echo "$(GREEN)Compiling:$(NORMAL)"
+	$(GCC) -c $< -o $(<:.c=.o)
+	@echo "$(GREEN)Successfully compiled!$(NORMAL)"
 
 clean:
-	make fclean -C libft
-	rm -f $(SRC_OBJ)
+	@echo "$(RED)Removing all object files...$(NORMAL)"
+	rm -f $(OBJS)
+	make -C $(LIBFT_DIR) clean
+	@echo "$(GREEN)Succesfully removed all object files!$(NORMAL)"
 
 fclean: clean
-	rm -f $(LIBFT)
+	@echo "$(RED)Removing libraries...$(NORMAL)"
 	rm -f $(NAME)
+	make -C $(LIBFT_DIR) fclean
+	@echo "$(GREEN)Successfully removed libraries!$(NORMAL)"
 
 re: fclean all
 
-.PHONY: all clean fclean re
-
+.PHONY:	clean fclean re

@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 23:20:11 by catalina      #+#    #+#                 */
-/*   Updated: 2021/06/14 13:05:27 by catalina      ########   odam.nl         */
+/*   Updated: 2021/06/19 12:20:22 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_array rules_rotate_ra(t_array array)
 {
 	int* new_array;
 	int i;
-
+    ft_putendl_fd("ra",1);
 	if (array.len_array_a <= 0)
 		return (array);
 	i = 0;
@@ -38,6 +38,7 @@ t_array rules_rotate_rb(t_array array)
 	int* new_array;
 	int i;
 
+    ft_putendl_fd("rb",1);
 	if (array.len_array_b <= 0)
 		return (array);
 	i = 0;

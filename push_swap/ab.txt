@@ -1,0 +1,19 @@
+rra
+rra
+rra
+pb
+rra
+pb
+ra
+sa
+sb
+pa
+pa
+pa
+pa
+count 2
+
+
+count 0
+
+

@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 17:06:51 by adoner        #+#    #+#                 */
-/*   Updated: 2021/06/14 13:04:51 by catalina      ########   odam.nl         */
+/*   Updated: 2021/06/19 12:20:09 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_array rules_push_pa(t_array arrays)
     int i;
 
 
+    ft_putendl_fd("pa",1);
     i = 1;
 
     if (arrays.len_array_b <= 0)
@@ -55,6 +56,7 @@ t_array rules_push_pb(t_array arrays)
     int i;
 
 
+    ft_putendl_fd("pb",1);
     i = 1;
     if (arrays.len_array_a <= 0)
         return (arrays);

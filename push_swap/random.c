@@ -46,7 +46,7 @@ int main (void) {
 
     i = myRandom (300);
     while (i >= 0) {
-        printf ("%3d", i);
+        printf ("%d ", i);
         i = myRandom (-1);
     }
 
