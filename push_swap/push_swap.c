@@ -236,41 +236,27 @@ int where_small_digit(t_array array)
     small_digit = array.array_a[0];
     while (array.len_array_a > i)
     {
-        printf("\ndigit is %d\n",array.array_a[i]);
+        //printf("\ndigit is %d\n",array.array_a[i]);
         if (small_digit > array.array_a[i])
         {
-            printf("\nsmall digit is %d\n",array.array_a[i]);
+        //    printf("\nsmall digit is %d\n",array.array_a[i]);
             small_digit = array.array_a[i];
             count = i;
         }
         i++;
     }
-    printf("\n count is %d digit is %d small digit is %d\n",count,array.array_a[count],small_digit);
+    //printf("\n count is %d digit is %d small digit is %d\n",count,array.array_a[count],small_digit);
     return (count);
 }
 t_array digit_5_speaciel(t_array array)
 {
     int small_digit_count;
- 
+    int i;
+
+    i = 0;
     small_digit_count = where_small_digit(array);
 
-    //printf("count %d\n\n\n",small_digit_count);
-       int abc= 0;
-    while(array.len_array_a > abc)
-    {
-        printf("%d\n",array.array_a[abc]);
-        abc++;
-    }
-    printf("--------------\n");
     if (small_digit_count > 3)
-    {
-        while (5 - small_digit_count >= 0)
-        {
-            array = rules_rotate_ra(array);
-            small_digit_count++;
-        }
-    }
-    else
     {
         while (5 - small_digit_count > 0)
         {
@@ -278,29 +264,21 @@ t_array digit_5_speaciel(t_array array)
             small_digit_count++;
         }
     }
-    array = rules_push_pb(array);
-     abc= 0;
-    while(array.len_array_a > abc)
-    {
-        printf("%d\n",array.array_a[abc]);
-        abc++;
-    }
-    printf("--------------\n");
-    if (array.len_array_a > 3)
-        array = digit_5_speaciel(array);
     else
+    {
+        while (i < small_digit_count)
+        {
+            array = rules_rotate_ra(array);
+            i++;
+        }
+    }
+    //printf("gitdi\n");
+    array = rules_push_pb(array);
+    if (array.len_array_a == 3)
     {
         array = digit_3_speaciel(array);
         array = sort_smaller(array);
     }
-     abc= 0;
-    while(array.len_array_a > abc)
-    {
-        printf("%d\n",array.array_a[abc]);
-        abc++;
-    }
-    printf("--------------\n");
-
     return (array);
 }
 int main(int argc, char **argv)
@@ -323,11 +301,25 @@ int main(int argc, char **argv)
     if (argc == 4)
         a = digit_3_speaciel(a);
     else if (argc == 6)
-        a = digit_5_speaciel(a);
+    {
+        while (i  < 2)
+        {
+             a = digit_5_speaciel(a);
+             i++;
+        }
+
+    }
+
     else
     {
         a = find_pivot(a);
         a = sort_bigger(a);
         a = sort_smaller(a);
     }
+    // int abc = 0;
+    // while (a.len_array_a > abc)
+    // {
+    //     printf("%d\n",a.array_a[abc]);
+    //     abc++;
+    // }
 }
