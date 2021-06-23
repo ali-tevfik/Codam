@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/19 17:33:07 by catalina      #+#    #+#                 */
-/*   Updated: 2021/06/19 14:41:19 by adoner        ########   odam.nl         */
+/*   Updated: 2021/06/23 14:57:38 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include "./Libft/libft.h"
 # include <stdarg.h>
+
 
 typedef struct  s_array
 {

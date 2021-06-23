@@ -1,4 +1,13 @@
+//#include <stdio.h>
 #include "ft_push_swap.h"
+// #include "Libft/libft.h"
+// #include "ft_isdigit_str.c"
+// #include "rules_swap.c"
+// #include "rules_push.c"
+// #include "rules_rotate.c"
+// #include "rules_reverse.c"
+// #include "check_sort.c"
+
 
 int *convert_int(char **argv, int len)
 {
@@ -93,17 +102,13 @@ t_array sort_bigger(t_array array)
     int abc;
     x = array.len_array_a;
     i = 0;
-    while (1 && array.len_array_a > 1)
+    while (array.len_array_a > 1)
     {
-        if (find_smallest(array) == 1 && array.len_array_a != 3)
+        if (find_smallest(array) == 1)
             array = rules_push_pb(array);
         else if (array.array_a[0] > array.array_a[1])
         {
             array = swap_sa(array);
-        }
-        else if (array.array_a[array.len_array_a - 1] < array.array_a[array.len_array_a - 2])
-        {
-            array = rules_reverse_rra(array);
         }
         else if (array.array_a[0] > array.array_a[array.len_array_a - 1])
         {
@@ -116,7 +121,7 @@ t_array sort_bigger(t_array array)
             int n = 0;
             if (en_buyuk > array.len_array_a / 2)
             {
-                while (n < en_buyuk)
+                while (n <= en_buyuk)
                 {
                     array = rules_reverse_rra(array);
                     n++;

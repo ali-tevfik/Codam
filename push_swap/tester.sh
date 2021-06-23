@@ -9,17 +9,17 @@ YELLOW="\033[0;33m"
 echo -e "${RED}\n---- MY PUSH_SWAP ERROR TEST CASES ---- \n ${NORMAL}"
 
 ######### INPUT VALIDATION TEST ##############
-echo -e "${PURPLE}---- INPUT VALIDATION ---- ${NORMAL}"
+# echo -e "${PURPLE}---- INPUT VALIDATION ---- ${NORMAL}"
 
-echo -e "${BLUE}some arguments aren’t integers: 1 2 3 one ${NORMAL}"
-./push_swap 1 2 3 one
+# echo -e "${BLUE}some arguments aren’t integers: 1 2 3 one ${NORMAL}"
+# ./push_swap 1 2 3 one
 
 # echo -e "${BLUE}some arguments are bigger than an integer: 2 1 3 6 5 2147483648 ${NORMAL}"
 # ./push_swap 2 1 3 6 5 2147483648
 
-# echo -e "${BLUE}some arguments has doubles${NORMAL}"
-# ./push_swap 44 79 85 44 65 31 28 3 86 30 25 59 56 60 17 36 10 29 88 46 49
-####################
+echo -e "${BLUE}some arguments has doubles${NORMAL}"
+./push_swap 44 79 85 44 65 31 28 3 86 30 25 59 56 60 17 36 10 29 88 46 49
+###################
 
 # ######### SOME TEST CASES ##############
 echo -e "${PURPLE}\n---- SOME TEST CASES ---- ${NORMAL}"
@@ -50,13 +50,14 @@ echo -e "${YELLOW}Instruction amount:${NORMAL}"
 ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"` ; ./push_swap $ARG| wc -l
 echo -e "${GREEN}Checker:${NORMAL}"
 ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checkers/checker_MAC $ARG
-echo -e "${RED} digits ${ARG}"
+ echo -e "${RED} digits ${ARG}"
 
-# echo -e "${RED}20(list size)${NORMAL}"
-# echo -e "${YELLOW}Instruction amount:${NORMAL}"
-# ARG=`ruby -e "puts (1..19).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l
-# echo -e "${GREEN}Checker:${NORMAL}"
-# ARG=`ruby -e "puts (1..19).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checkers/checker_MAC $ARG
+echo -e "${RED}20(list size)${NORMAL}"
+echo -e "${YELLOW}Instruction amount:${NORMAL}"
+ARG=`ruby -e "puts (1..19).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l
+echo -e "${RED} digits ${ARG}"
+echo -e "${GREEN}Checker:${NORMAL}"
+ARG=`ruby -e "puts (1..19).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checkers/checker_MAC $ARG
 
 # echo -e "${RED}100(list size)${NORMAL}"
 # echo -e "${YELLOW}Instruction amount:${NORMAL}"
