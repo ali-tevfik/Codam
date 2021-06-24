@@ -7,7 +7,7 @@
 // #include "rules_rotate.c"
 // #include "rules_reverse.c"
 // #include "check_sort.c"
-
+t_array sort_smaller(t_array array);
 
 int *convert_int(char **argv, int len)
 {
@@ -31,30 +31,55 @@ int *convert_int(char **argv, int len)
 
 t_array find_pivot(t_array array)
 {
-    int i = 0;
-    int toplam = 0;
-    int uzunluk_a = array.len_array_a;
-    while (i < array.len_array_a)
-    {
-        toplam += array.array_a[i];
-        i++;
-    }
-    int ortalama = toplam / array.len_array_a;
-    i = 0;
-    while (i < uzunluk_a)
-    {
-        int abc;
-        abc = 0;
-        if (ortalama >= array.array_a[0])
-        {
-            array = rules_push_pb(array);
-        }
+    int i = 1;
+    int mod_sayisi = array.len_array_a / 5;
+    int x;
+    int len_a;
+    int a = 0;
+    int sonuc2;
+    int sonuc;
+    int count_b;
+    t_array fake_array;
+    int sayi; 
+
+    if (array.len_array_a == 499)
+        sayi = 11;
+    else
+        sayi = 5;
+    count_b = 0;
+    fake_array = sort(array);
+    x = 0;
+   while (mod_sayisi >= x)
+   {
+       if (x == 0)
+            sonuc2 = 0;
         else
-        {
-            array = rules_rotate_ra(array);
-        }
-        i++;
-    }
+            sonuc2 = (x -1) * sayi;
+       sonuc = x * sayi; 
+       len_a = array.len_array_a;
+       a = 0;
+       while(a <= len_a)
+       {
+           //printf("\n\nsuanki mod %d\nmod sayisi = %d  \nx.i = %d \n(x-1).i = %d \nfake_array\n\tmax = %d\n\tmin= %d\narray_a[0] %d\nindex sayisi %d\n ",x,mod_sayisi,sonuc,sonuc2,fake_array.array_a[sonuc],fake_array.array_a[sonuc2],array.array_a[0],a);
+           if ((fake_array.array_a[sonuc2] < array.array_a[0]) && fake_array.array_a[sonuc] >= array.array_a[0]){
+            //printf("\n\n\n\n pusb %d \n\n\n\n\n",array.array_a[0]);
+            count_b++;
+            array = rules_push_pb(array);    
+            // printf("-----------------------------------------------------\n");
+            }
+           else
+                array = rules_reverse_rra(array);
+            a++;
+                
+       }
+    array = sort_smaller(array);
+    int len_b = array.len_array_b;
+    while (len_b-- >= 0)
+        array = rules_push_pa(array);
+       
+       x++;
+    }  
+    int len_b = array.len_array_b;
     return (array);
 }
 
@@ -196,16 +221,10 @@ t_array sort_smaller(t_array array)
     int abc;
     x = array.len_array_b;
     i = 0;
-    while (1 && array.len_array_b > 1)
+    while (1 && array.len_array_b >= 1)
     {
         abc = 0;
-        if (check_bigste(array) == 1)
-            array = rules_push_pa(array);
-        else if (array.array_b[0] < array.array_b[1])
-        {
-            array = swap_sb(array);
-        }
-        else if (array.array_b[array.len_array_b - 1] > array.array_b[array.len_array_b - 2])
+        if (array.array_b[array.len_array_b - 1] > array.array_b[array.len_array_b - 2])
         {
             array = rules_reverse_rrb(array);
         }
@@ -225,7 +244,7 @@ t_array sort_smaller(t_array array)
         else
             break;
     }
-    array = rules_push_pa(array);
+   
 
     return (array);
 }
@@ -318,13 +337,14 @@ int main(int argc, char **argv)
     else
     {
         a = find_pivot(a);
-        a = sort_bigger(a);
-        a = sort_smaller(a);
+        // a = sort_bigger(a);
+        // a = sort_smaller(a);
     }
-    // int abc = 0;
-    // while (a.len_array_a > abc)
-    // {
-    //     printf("%d\n",a.array_a[abc]);
-    //     abc++;
-    // }
+
+    int abc = 0;
+    while (a.len_array_a > abc)
+    {
+        printf("%d\n",a.array_a[abc]);
+        abc++;
+    }
 }

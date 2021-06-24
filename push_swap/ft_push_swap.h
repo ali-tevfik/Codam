@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/19 17:33:07 by catalina      #+#    #+#                 */
-/*   Updated: 2021/06/23 14:57:38 by catalina      ########   odam.nl         */
+/*   Updated: 2021/06/24 13:58:09 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int main(int argc, char **argv);
 int ft_isdigit_str(char **c);
 t_array swap_sa(t_array array);
 t_array swap_sb(t_array array);
+t_array sort(t_array array);
 t_array swap_ss(t_array array);
 t_array rules_push_pb(t_array big_array);
 t_array rules_push_pa(t_array big_array);

@@ -9,6 +9,7 @@ SRCS	=	check_sort.c\
 			rules_push.c\
 			rules_reverse.c\
 			rules_rotate.c\
+			sort.c\
 			rules_swap.c
 
 OBJS	= $(SRCS:.c=.o)

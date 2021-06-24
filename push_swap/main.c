@@ -3,5 +3,5 @@
 int main(int argc, char **argv)
 {
 
-    printf("%d",ft_isdigit_str(argv));
+    printf("mod %d bolum %d",23%5,23/5);
 }
