@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/19 17:33:07 by catalina      #+#    #+#                 */
-/*   Updated: 2021/06/24 13:58:09 by adoner        ########   odam.nl         */
+/*   Updated: 2021/07/19 11:58:33 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ typedef struct s_result
 
 int main(int argc, char **argv);
 int ft_isdigit_str(char **c);
+t_array sort_a(t_array array);
 t_array swap_sa(t_array array);
 t_array swap_sb(t_array array);
-t_array sort(t_array array);
 t_array swap_ss(t_array array);
 t_array rules_push_pb(t_array big_array);
 t_array rules_push_pa(t_array big_array);
