@@ -10,7 +10,11 @@ SRCS	=	check_sort.c\
 			rules_reverse.c\
 			sort.c\
 			rules_rotate.c\
-			rules_swap.c
+			rules_swap.c\
+			special_tree.c\
+			special_five.c\
+			special_100_500.c\
+			convert_int.c
 
 OBJS	= $(SRCS:.c=.o)
 
