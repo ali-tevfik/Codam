@@ -14,7 +14,8 @@ SRCS	=	check_sort.c\
 			special_tree.c\
 			special_five.c\
 			special_100_500.c\
-			convert_int.c
+			convert_int.c\
+			normal_digit_sort.c
 
 OBJS	= $(SRCS:.c=.o)
 

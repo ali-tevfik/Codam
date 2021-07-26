@@ -12,12 +12,12 @@
 
 #include "ft_push_swap.h"
 
-t_array rules_reverse_rra(t_array array)
+t_array	rules_reverse_rra(t_array array)
 {
-	int* new_array;
-	int i;
+	int	*new_array;
+	int	i;
 
-    ft_putendl_fd("rra",1);
+	ft_putendl_fd("rra", 1);
 	if (array.len_array_a <= 0)
 		return (array);
 	i = 1;
@@ -30,16 +30,15 @@ t_array rules_reverse_rra(t_array array)
 	}
 	free(array.array_a);
 	array.array_a = new_array;
-	int abc = 0;
 	return (array);
 }
 
-t_array rules_reverse_rrb(t_array array)
+t_array	rules_reverse_rrb(t_array array)
 {
-	int* new_array;
-	int i;
+	int	*new_array;
+	int	i;
 
-    ft_putendl_fd("rrb",1);
+	ft_putendl_fd("rrb", 1);
 	if (array.len_array_b <= 0)
 		return (array);
 	i = 1;
@@ -55,7 +54,7 @@ t_array rules_reverse_rrb(t_array array)
 	return (array);
 }
 
-t_array rules_reverse_rrr(t_array array)
+t_array	rules_reverse_rrr(t_array array)
 {
 	array = rules_rotate_ra(array);
 	array = rules_rotate_rb(array);

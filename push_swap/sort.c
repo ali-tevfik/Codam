@@ -1,48 +1,63 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   sort.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: catalina <catalina@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/07/26 17:36:06 by catalina      #+#    #+#                 */
+/*   Updated: 2021/07/26 17:36:08 by catalina      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_push_swap.h"
-t_array sort_a(t_array array)
+
+int	*helper_sort(int arr[], int length)
 {
-    int arr[array.len_array_a + 1];
-    int x;
-    x = 0;
-    t_array fake_array;
-    while (array.len_array_a >= x)
-    {
-        arr[x] = array.array_a[x];
-        x++;
-    }
+	int	i;
+	int	j;
+	int	temp;
 
-    int temp = 0;
+	i = 0;
+	j = 0;
+	while (i < length)
+	{
+		j = i + 1;
+		while (j < length)
+		{
+			if (arr[i] > arr[j])
+			{
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (arr);
+}
 
-    //Calculate length of array arr
-    int length = sizeof(arr) / sizeof(arr[0]);
+t_array	sort_a(t_array array)
+{
+	int	arr[array.len_array_a + 1];
+	int	x;
+	int	*new_arr;
+	t_array	fake_array;
 
-    //Sort the array in ascending order
-    for (int i = 0; i < length; i++)
-    {
-        for (int j = i + 1; j < length; j++)
-        {
-            if (arr[i] > arr[j])
-            {
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
-    x = 0;
-    fake_array.array_a = (int *)malloc(sizeof(fake_array.array_a) * (array.len_array_a + 1));
-    while (x <= array.len_array_a)
-    {
-        fake_array.array_a[x] = arr[x + 1];
-        x++;
-    }
-
-    // int xx = 0;
-    // while (array.len_array_a > xx)
-    // {
-    // 	printf("\n%d =  %d\n",xx,fake_array.array_a[xx]);
-    // 	xx++;
-    // }
-
-    return (fake_array);
+	x = 0;
+	while (array.len_array_a >= x)
+	{
+		arr[x] = array.array_a[x];
+		x++;
+	}
+	new_arr = helper_sort(arr, array.len_array_a);
+	x = 0;
+	fake_array.array_a = (int *)malloc(sizeof(fake_array.array_a) * (array.len_array_a + 1));
+	while (x <= array.len_array_a)
+	{
+		fake_array.array_a[x] = new_arr[x + 1];
+		x++;
+	}
+	return (fake_array);
 }

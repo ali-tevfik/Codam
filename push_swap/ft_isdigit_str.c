@@ -14,23 +14,23 @@
 
 // if return 0 thats mean there have char
 // if return 1 thats mean there have only int
-int ft_isdigit_str(char **c)
+int	ft_isdigit_str(char **c)
 {
-    int i;
-    int x;
+	int	i;
+	int	x;
 
-    x = 0;
-    i = 1;
-    while(c[i])
-    {
-        while(c[i][x])
-        {
-            if (!(c[i][x] >= '0' && c[i][x] <= '9'))
-                return (0);
-            x++;
-        }
-        x = 0;
-        i++;
-    }
-    return (1);
+	x = 0;
+	i = 1;
+	while (c[i])
+	{
+		while (c[i][x])
+		{
+			if (!(c[i][x] >= '0' && c[i][x] <= '9'))
+				return (0);
+			x++;
+		}
+		x = 0;
+		i++;
+	}
+	return (1);
 }

@@ -1,5 +1,10 @@
 {
 	"files.associations": {
-		"ft_push_swap.h": "c"
+		"ft_push_swap.h": "c",
+		"__locale": "c",
+		"__string": "c",
+		"string": "c",
+		"string_view": "c",
+		"algorithm": "c"
 	}
 }

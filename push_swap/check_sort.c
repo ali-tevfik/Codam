@@ -6,18 +6,19 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 23:57:12 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/26 12:09:19 by catalina      ########   odam.nl         */
+/*   Updated: 2021/07/26 13:47:11 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
 // good = 1
-int check_a_bigger_b(t_array array)
+int	check_a_bigger_b(t_array array)
 {
-	int max_sayi;
-	int xy = 0;
+	int	max_sayi;
+	int	xy;
 
+	xy = 0;
 	max_sayi = array.array_a[0];
 	xy = 0;
 	while (array.len_array_b > xy)
@@ -30,10 +31,10 @@ int check_a_bigger_b(t_array array)
 }
 
 //if return 0 , thats didn't good work!
-t_result check_sort_a(t_array array)
+t_result	check_sort_a(t_array array)
 {
-	int i;
-	t_result result;
+	int			i;
+	t_result	result;
 
 	result.result = 0;
 	i = 0;
@@ -49,25 +50,4 @@ t_result check_sort_a(t_array array)
 	else
 		result.result = 0;
 	return (result);
-
 }
-t_result check_sort_b(t_array array)
-{
-	int i;
-	t_result result;
-
-	result.result = 0;
-	i = 0;
-	while (i < array.len_array_b - 1)
-	{
-		result.where = i;
-		if (array.array_b[i] < array.array_b[i + 1])
-			return (result);
-		i++;
-	}
-
-	result.result = 1;
-	return (result);
-
-}
-

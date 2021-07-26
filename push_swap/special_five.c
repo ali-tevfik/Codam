@@ -6,17 +6,17 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/22 18:00:02 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/22 18:07:08 by catalina      ########   odam.nl         */
+/*   Updated: 2021/07/26 16:44:56 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-int where_small_digit(t_array array)
+int	where_small_digit(t_array array)
 {
-	int small_digit;
-	int i;
-	int count;
+	int	small_digit;
+	int	i;
+	int	count;
 
 	count = 0;
 	i = 0;
@@ -33,7 +33,7 @@ int where_small_digit(t_array array)
 	return (count);
 }
 
-t_array edit_five(t_array array)
+t_array	edit_five(t_array array)
 {
 	array = digit_3_speaciel(array);
 	if (array.array_b[0] < array.array_b[1])
@@ -43,10 +43,10 @@ t_array edit_five(t_array array)
 	return (array);
 }
 
-t_array digit_5_speaciel(t_array array)
+t_array	digit_5_speaciel(t_array array)
 {
-	int small_digit_count;
-	int i;
+	int	small_digit_count;
+	int	i;
 
 	i = 0;
 	small_digit_count = where_small_digit(array);
