@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/22 18:15:08 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/26 13:30:49 by catalina      ########   odam.nl         */
+/*   Updated: 2021/07/26 13:35:02 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int main(int argc, char **argv)
     else if (argc == 101)
         a = speical_big_digit(a, 5);
     else if (argc == 501)
-        a = speical_big_digit(a, 11);
+        a = speical_big_digit(a, 10);
     else
          a = find_pivot(a);
     // int abc = 0;
