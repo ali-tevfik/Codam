@@ -6,12 +6,11 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/22 18:12:39 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/22 18:51:38 by catalina      ########   odam.nl         */
+/*   Updated: 2021/07/26 13:30:07 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
 void b_yazdir(t_array array,char *txt)
 {
 	int x = 0;
@@ -31,6 +30,7 @@ t_array max_digit_up_b(t_array array)
 	int max_digit;
 	int posion;
 
+	posion = 0;
 	x = 0;
 	max_digit = array.array_b[0];
 	while (array.len_array_b > x)
@@ -42,30 +42,72 @@ t_array max_digit_up_b(t_array array)
 		}
 		x++;
 	}
-	while (posion > 0)
+	if (posion > array.len_array_b / 2)
 	{
-		array = rules_rotate_rb(array);
-		posion--;
+		while (array.len_array_b - posion > 0)
+		{
+			array = rules_reverse_rrb(array);
+			posion ++;
+		}
+	}
+	else
+	{
+		while (posion > 0)
+		{
+			array = rules_rotate_rb(array);
+			posion--;
+		}
 	}
 	x = 0;
 	return (array);
+}
+int find_index(t_array array)
+{
+	int i;
+
+	i = 0;
+	while (array.len_array_b > i)
+	{
+		if (array.array_a[0] < array.array_b[i] && array.array_a[0] > array.array_b[i + 1])
+			return (i);
+		i++;
+	}
+	//printf("\n\nindx bulma func arr[0] = %d i = %d i + 1 = %d index = %d\n",array.array_a[0],array.array_b[x],array.array_b[x + 1], x);
+
+	return (-1);
 }
 
 t_array index_find_and_push(t_array array)
 {
 	int xy;
+	int index;
 
-	xy = 0;
-	while (array.len_array_b > xy)
+	index = find_index(array);
+	//printf("\n\nindex  =  %d a = %d\n\n",index, array.array_a[0]);
+	//b_yazdir(array, "index  degismeden once");
+	if (index > array.len_array_b / 2)
 	{
-		if (array.array_a[0] > array.array_b[0] && array.array_a[0] < array.array_b[array.len_array_b - 1])
+		while (array.len_array_b - index > 0)
 		{
-			array = rules_push_pb(array);
-			break;
+			array = rules_reverse_rrb(array);
+			index++;
 		}
-		else
-			array = rules_rotate_rb(array);
+	//b_yazdir(array, "index sonra if");
 	}
+	else
+	{
+		while (index >= 0)
+		{
+			array = rules_rotate_rb(array);
+			index--;
+		}
+	//	b_yazdir(array, "index sonra else");
+	}
+
+	if (array.array_a[0] > array.array_b[0] && array.array_a[0] < array.array_b[array.len_array_b - 1])
+			array = rules_push_pb(array);
+
+	//b_yazdir(array, "push sonra");
 	return (array);
 }
 
@@ -89,15 +131,21 @@ t_array sort_b(t_array array)
 		xy++;
 	}
 	xy = 0;
+	if (check_sort_a(array).result == 1)
+	{
+		array = max_digit_up_b(array);
+		while (array.len_array_b > 0)
+			array = rules_push_pa(array);
+		return (array);
+	}
 	if (max_sayi == array.array_a[0] || min_sayi == array.array_a[0])
 	{
 		array = max_digit_up_b(array);
 		array = rules_push_pb(array);
-		b_yazdir(array,"max min");
 	}
 	else{
 		array = index_find_and_push(array);
-		b_yazdir(array,"index");}
+		}
 	return (array);
 }
 
@@ -118,6 +166,12 @@ t_array speical_big_digit(t_array array, int how_many)
 		i = 0;
 		while (i < array.len_array_a)
 		{
+			if (check_sort_a(array).result == 1){
+				array = max_digit_up_b(array);
+				while (array.len_array_b > 0)
+					array = rules_push_pa(array);
+			return (array);
+			}
 			if (fake_array.array_a[len / how_many * count] > array.array_a[0])
 			{
 
