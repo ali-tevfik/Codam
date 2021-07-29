@@ -20,7 +20,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	*st2;
 
 	st1 = (unsigned char *)s1;
-	st2 = (unsigned char*)s2;
+	st2 = (unsigned char *)s2;
 	i = 0;
 	while (i < n)
 	{

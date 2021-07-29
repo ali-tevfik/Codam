@@ -50,7 +50,7 @@ echo -e "${YELLOW}Instruction amount:${NORMAL}"
 ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"` ; ./push_swap $ARG| wc -l
 echo -e "${GREEN}Checker:${NORMAL}"
 ARG=`ruby -e "puts (1..5).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checkers/checker_MAC $ARG
- echo -e "${RED} digits ${ARG}"
+ #echo -e "${RED} digits ${ARG}"
 
 echo -e "${RED}20(list size)${NORMAL}"
 echo -e "${YELLOW}Instruction amount:${NORMAL}"
@@ -58,13 +58,14 @@ ARG=`ruby -e "puts (1..19).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l
 echo -e "${RED} digits ${ARG}"
 echo -e "${GREEN}Checker:${NORMAL}"
 ARG=`ruby -e "puts (1..19).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checkers/checker_MAC $ARG
+ #echo -e "${RED} digits ${ARG}"
 
 echo -e "${RED}100(list size)${NORMAL}"
 echo -e "${YELLOW}Instruction amount:${NORMAL}"
 ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l
 echo -e "${GREEN}Checker:${NORMAL}"
 ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checkers/checker_MAC $ARG
- echo -e "${RED} digits ${ARG}"
+# echo -e "${RED} digits ${ARG}"
 
 
 echo -e "${RED}500(list size)${NORMAL}"
@@ -72,3 +73,4 @@ echo -e "${YELLOW}Instruction amount:${NORMAL}"
 ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l
 echo -e "${GREEN}Checker:${NORMAL}"
 ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checkers/checker_MAC $ARG
+ #echo -e "${RED} digits ${ARG}"

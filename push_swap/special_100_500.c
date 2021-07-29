@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/22 18:12:39 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/26 16:42:45 by catalina      ########   odam.nl         */
+/*   Updated: 2021/07/29 17:37:20 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ int	find_index(t_array array)
 	i = 0;
 	while (array.len_array_b > i)
 	{
-		if (array.array_a[0] < array.array_b[i] && array.array_a[0] > array.array_b[i + 1])
+		if (array.array_a[0] <= array.array_b[i]
+			&& array.array_a[0] >= array.array_b[i + 1])
 			return (i);
 		i++;
 	}
@@ -86,12 +87,14 @@ t_array	index_find_and_push(t_array array)
 			index--;
 		}
 	}
-	if (array.array_a[0] > array.array_b[0] && array.array_a[0] < array.array_b[array.len_array_b - 1])
+	if (array.array_a[0] >= array.array_b[0]
+		&& array.array_a[0] <= array.array_b[array.len_array_b - 1])
 		array = rules_push_pb(array);
 	return (array);
 }
 
-//i'm looking array_b max en min digit. if my digit bigger than arrayb or smaller than array b, i only push b
+//i'm looking array_b max en min digit.
+//if my digit bigger than arrayb or smaller than array b, i only push b
 // else i'm looking index
 t_array	sort_b(t_array array)
 {
@@ -128,19 +131,39 @@ t_array	sort_b(t_array array)
 	return (array);
 }
 
+int	find_chunk(t_array array, int how_many)
+{
+	int	i;
+	int	max;
+	int	min;
+
+	max = array.array_a[0];
+	min = array.array_a[0];
+	i = 0;
+	while (i < array.len_array_a)
+	{
+		if (max < array.array_a[i])
+			max = array.array_a[i];
+		else if (min > array.array_a[i])
+			min = array.array_a[i];
+		i++;
+	}
+	return ((max - min) / how_many);
+}
+
 // b de iki den fazla eleman varsa yerlestirme yapiyorum
 //yoksa direk pushb
 t_array	speical_big_digit(t_array array, int how_many)
 {
-	t_array	fake_array;
 	int		count;
 	int		i;
 	int		len;
+	int		max_digit_chunk;
 
+	max_digit_chunk = find_chunk(array, how_many);
 	len = array.len_array_a;
 	count = 1;
-	fake_array = sort_a(array);
-	while (count <= how_many)
+	while (count - 1 <= how_many)
 	{
 		i = 0;
 		while (i < array.len_array_a)
@@ -152,7 +175,7 @@ t_array	speical_big_digit(t_array array, int how_many)
 					array = rules_push_pa(array);
 				return (array);
 			}
-			if (fake_array.array_a[len / how_many * count] > array.array_a[0])
+			if (max_digit_chunk * count + count * 1 > array.array_a[0])
 			{
 				if (array.len_array_b >= 2)
 					array = sort_b(array);

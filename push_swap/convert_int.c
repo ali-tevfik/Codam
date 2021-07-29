@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/22 18:10:07 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/26 15:02:23 by catalina      ########   odam.nl         */
+/*   Updated: 2021/07/29 19:07:47 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	*convert_int(char **argv, int len)
 
 	x = 1;
 	y = 0;
-	array = (int *) malloc(len * sizeof(int));
+	array = (int *) malloc((len + 1) * sizeof(array));
 	if (!array)
 		return (NULL);
 	while (argv[x])

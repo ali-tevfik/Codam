@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/19 17:33:07 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/26 18:42:41 by catalina      ########   odam.nl         */
+/*   Updated: 2021/07/28 19:21:08 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_array
 	int		*array_b;
 	int		len_array_a;
 	int		len_array_b;
+	int		check_malloc;
 }			t_array;
 
 typedef struct s_result
@@ -34,7 +35,6 @@ typedef struct s_result
 
 int			main(int argc, char **argv);
 int			ft_isdigit_str(char **c);
-t_array		sort_a(t_array array);
 t_array		speical_big_digit(t_array array, int how_many);
 t_array		swap_sa(t_array array);
 t_array		swap_sb(t_array array);
@@ -53,5 +53,6 @@ t_array		digit_3_speaciel(t_array array);
 t_array		digit_5_speaciel(t_array array);
 int			*convert_int(char **argv, int len);
 t_array		speical_big_digit(t_array array, int how_many);
-t_array		find_pivot(t_array array);
+t_array		check_malloc(t_array array);
+t_array		free_array (t_array array);
 #endif

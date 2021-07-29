@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/22 18:00:02 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/26 16:44:56 by catalina      ########   odam.nl         */
+/*   Updated: 2021/07/28 13:35:50 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_array	digit_5_speaciel(t_array array)
 	small_digit_count = where_small_digit(array);
 	if (small_digit_count > 3)
 	{
-		while (5 - small_digit_count > 0)
+		while (5 - small_digit_count > 0 && array.array_a)
 		{
 			array = rules_reverse_rra(array);
 			small_digit_count++;
@@ -60,14 +60,14 @@ t_array	digit_5_speaciel(t_array array)
 	}
 	else
 	{
-		while (i < small_digit_count)
+		while (i < small_digit_count && array.array_a)
 		{
 			array = rules_rotate_ra(array);
 			i++;
 		}
 	}
 	array = rules_push_pb(array);
-	if (array.len_array_a == 3)
+	if (array.len_array_a == 3 && array.array_a)
 		array = edit_five(array);
 	return (array);
 }

@@ -8,14 +8,13 @@ SRCS	=	check_sort.c\
 			push_swap.c\
 			rules_push.c\
 			rules_reverse.c\
-			sort.c\
 			rules_rotate.c\
 			rules_swap.c\
 			special_tree.c\
 			special_five.c\
 			special_100_500.c\
 			convert_int.c\
-			normal_digit_sort.c
+			check_malloc.c
 
 OBJS	= $(SRCS:.c=.o)
 

@@ -95,11 +95,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1 == NULL)
 		return (NULL);
 	else if (set == NULL)
-		return ((char*)s1);
+		return ((char *)s1);
 	i = 0;
 	first = first_check(s1, set);
 	end = endcheck(s1, set, first);
-	s = (char*)malloc(ft_strlen(s1) - first - end + 1);
+	s = (char *)malloc(ft_strlen(s1) - first - end + 1);
 	if (!s)
 		return (NULL);
 	while (first < (ft_strlen(s1) - end))
