@@ -14,7 +14,8 @@ SRCS	=	check_sort.c\
 			special_five.c\
 			special_100_500.c\
 			convert_int.c\
-			check_malloc.c
+			check_malloc.c\
+			helper_speaciel_100_500.c
 
 OBJS	= $(SRCS:.c=.o)
 

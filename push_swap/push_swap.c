@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/22 18:15:08 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/29 18:50:59 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/02 14:10:33 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ int	main(int argc, char **argv)
 	}
 	if (check_sort_a(array).result != 1)
 		array = sort_start(array, argc);
-	free(array.array_a);
+	if (array.array_a)
+		free(array.array_a);
 	if (array.array_b)
 		free(array.array_b);
 	return (0);

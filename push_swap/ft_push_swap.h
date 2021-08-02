@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/19 17:33:07 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/28 19:21:08 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/02 14:30:58 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,11 @@ typedef struct s_result
 }			t_result;
 
 int			main(int argc, char **argv);
+int			*find_max_min_digit(t_array array);
 int			ft_isdigit_str(char **c);
+int			find_index(t_array array);
+t_array		max_digit_up_b(t_array array);
+int			find_posion(t_array array);
 t_array		speical_big_digit(t_array array, int how_many);
 t_array		swap_sa(t_array array);
 t_array		swap_sb(t_array array);
