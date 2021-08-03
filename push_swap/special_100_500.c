@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/22 18:12:39 by catalina      #+#    #+#                 */
-/*   Updated: 2021/08/02 14:33:47 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/03 12:27:27 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ t_array	sort_b(t_array array)
 	return (array);
 }
 
-int	find_chunk(t_array array, int how_many)
+int	find_chunk_max(t_array array, int how_many)
 {
 	int	i;
 	int	max;
@@ -89,6 +89,8 @@ int	find_chunk(t_array array, int how_many)
 	return ((max - min) / how_many);
 }
 
+// if array_b len smaller than 2 i only push_pb
+//if array_b length bigger than 2 first sort array_b
 t_array	edit_chunk(t_array array, int max_digit_chunk, int count, int i)
 {
 	while (i < array.len_array_a)
@@ -116,15 +118,15 @@ t_array	edit_chunk(t_array array, int max_digit_chunk, int count, int i)
 	return (array);
 }
 
-// b de iki den fazla eleman varsa yerlestirme yapiyorum
-//yoksa direk pushb
+// first finds max number in first chunk.
+//	for each chunk it pushes the numbers in the correct order to array_b
 t_array	speical_big_digit(t_array array, int how_many)
 {
 	int		count;
 	int		len;
 	int		max_digit_chunk;
 
-	max_digit_chunk = find_chunk(array, how_many);
+	max_digit_chunk = find_chunk_max(array, how_many);
 	len = array.len_array_a;
 	count = 1;
 	while (count - 1 <= how_many)

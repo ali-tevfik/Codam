@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/21 14:32:36 by adoner        #+#    #+#                 */
-/*   Updated: 2021/02/24 22:42:53 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/03 16:02:00 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ static	int	checkspace(const char *s)
 	return (i);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	i;
-	int	total;
-	int	control;
+	int		i;
+	long	total;
+	int		control;
 
 	i = checkspace(str);
 	control = 1;

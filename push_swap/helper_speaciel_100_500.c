@@ -6,12 +6,13 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/08/02 13:41:05 by catalina      #+#    #+#                 */
-/*   Updated: 2021/08/02 14:30:48 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/03 12:17:20 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
+//find max digits posion
 int	find_posion(t_array array)
 {
 	int	max_digit;
@@ -33,6 +34,9 @@ int	find_posion(t_array array)
 	return (posion);
 }
 
+//find max and min digit.
+//max_min_arr[0] is max digit
+//max_min_arr[1] is min digit
 int	*find_max_min_digit(t_array array)
 {
 	int	*max_min_arr;
@@ -55,6 +59,7 @@ int	*find_max_min_digit(t_array array)
 	return (max_min_arr);
 }
 
+//edit array_a and biggest digit up
 t_array	max_digit_up_b(t_array array)
 {
 	int	posion;
@@ -79,6 +84,7 @@ t_array	max_digit_up_b(t_array array)
 	return (array);
 }
 
+//find exactly where this number will be pushed in array_b
 int	find_index(t_array array)
 {
 	int	i;

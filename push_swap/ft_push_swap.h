@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/19 17:33:07 by catalina      #+#    #+#                 */
-/*   Updated: 2021/08/02 14:30:58 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/03 15:40:53 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,12 @@ t_array		rules_reverse_rrr(t_array array);
 t_array		rules_reverse_rra(t_array array);
 t_array		rules_reverse_rrb(t_array array);
 t_result	check_sort_a(t_array array);
+int			error_text(void);
 t_result	check_sort_b(t_array array);
 t_array		digit_3_speaciel(t_array array);
 t_array		digit_5_speaciel(t_array array);
 int			*convert_int(char **argv, int len);
 t_array		speical_big_digit(t_array array, int how_many);
 t_array		check_malloc(t_array array);
-t_array		free_array (t_array array);
+t_array		free_array(t_array array);
 #endif

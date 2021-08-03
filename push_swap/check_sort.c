@@ -6,13 +6,13 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 23:57:12 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/28 13:36:59 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/03 12:10:44 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-// good = 1
+// if array_a[0] > array_b(all items) return = 1
 int	check_a_bigger_b(t_array array)
 {
 	int	max_sayi;
@@ -30,7 +30,8 @@ int	check_a_bigger_b(t_array array)
 	return (1);
 }
 
-//if return 0 , thats didn't good work!
+//check sort array_a and array_b
+// if array_a and array_b sort return 1
 t_result	check_sort_a(t_array array)
 {
 	int			i;

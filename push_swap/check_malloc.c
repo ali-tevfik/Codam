@@ -6,13 +6,14 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/28 13:16:05 by catalina      #+#    #+#                 */
-/*   Updated: 2021/07/28 14:01:23 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/03 12:11:59 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-t_array	free_array (t_array array)
+// if malloc crash i call this func and free array_a and array_b
+t_array	free_array(t_array array)
 {
 	if (array.array_a && array.len_array_a > 0)
 		free(array.array_a);
@@ -22,6 +23,7 @@ t_array	free_array (t_array array)
 	return (array);
 }
 
+//i check malloc crash or not
 t_array	check_malloc(t_array array)
 {
 	array.check_malloc = 0;

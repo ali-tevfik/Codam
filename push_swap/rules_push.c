@@ -6,12 +6,13 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 17:06:51 by adoner        #+#    #+#                 */
-/*   Updated: 2021/08/02 13:31:12 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/03 12:19:19 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
+//add new item. i created new array and fill array
 int	*fill_push_send(int *send_array, int *received_array, int len)
 {
 	int	*new_array_send;
@@ -32,6 +33,7 @@ int	*fill_push_send(int *send_array, int *received_array, int len)
 	return (new_array_send);
 }
 
+//remove item. i created new array and fill array
 int	*fill_push_recevied(int *received_array, int len)
 {
 	int	*new_received_arr;

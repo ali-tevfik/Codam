@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/22 18:15:08 by catalina      #+#    #+#                 */
-/*   Updated: 2021/08/02 14:10:33 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/03 16:02:51 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	error_text(void)
 	return (0);
 }
 
+//fill array_a with input
 t_array	fill_array_a(t_array array, char **argv, int argc)
 {
 	array.array_a = convert_int(argv, argc - 1);
@@ -50,25 +51,39 @@ t_array	sort_start(t_array array, int argc)
 	return (array);
 }
 
-int	main(int argc, char **argv)
+int	check_dublicate(t_array array)
 {
-	int		i;
-	t_array	array;
+	int	x;
+	int	i;
 
 	i = 0;
+	while (array.len_array_a > i)
+	{
+		x = i - 1;
+		while (x >= 0)
+		{
+			if (array.array_a[x] == array.array_a[i])
+				return (0);
+			x--;
+		}
+		i++;
+	}
+	return (1);
+}
+
+int	main(int argc, char **argv)
+{
+	t_array	array;
+
 	if (!ft_isdigit_str(argv))
 		return (error_text());
 	array = fill_array_a(array, argv, argc);
 	if (!array.array_a)
 		return (0);
-	while (array.len_array_a > i)
+	if (check_dublicate(array) == 0)
 	{
-		if (array.array_a[i] > 2147483647 || array.array_a[i] <= -2147483648)
-		{
-			array = free_array(array);
-			return (error_text());
-		}
-		i++;
+		array = free_array(array);
+		return (error_text());
 	}
 	if (check_sort_a(array).result != 1)
 		array = sort_start(array, argc);

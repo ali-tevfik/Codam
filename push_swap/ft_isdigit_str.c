@@ -6,14 +6,14 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/24 15:19:28 by adoner        #+#    #+#                 */
-/*   Updated: 2021/07/19 14:47:38 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/03 12:29:53 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-// if return 0 thats mean there have char
-// if return 1 thats mean there have only int
+//check int or char
+//if input have char return 0
 int	ft_isdigit_str(char **c)
 {
 	int	i;
