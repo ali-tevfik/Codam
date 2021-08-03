@@ -6,7 +6,7 @@
 /*   By: catalina <catalina@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/22 18:15:08 by catalina      #+#    #+#                 */
-/*   Updated: 2021/08/03 16:02:51 by catalina      ########   odam.nl         */
+/*   Updated: 2021/08/03 16:30:24 by catalina      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,11 @@ int	check_dublicate(t_array array)
 		while (x >= 0)
 		{
 			if (array.array_a[x] == array.array_a[i])
+			{
+				array = free_array(array);
+				error_text();
 				return (0);
+			}
 			x--;
 		}
 		i++;
@@ -73,18 +77,17 @@ int	check_dublicate(t_array array)
 
 int	main(int argc, char **argv)
 {
+	int		i;
 	t_array	array;
 
+	i = 0;
 	if (!ft_isdigit_str(argv))
 		return (error_text());
 	array = fill_array_a(array, argv, argc);
 	if (!array.array_a)
 		return (0);
 	if (check_dublicate(array) == 0)
-	{
-		array = free_array(array);
-		return (error_text());
-	}
+		return (0);
 	if (check_sort_a(array).result != 1)
 		array = sort_start(array, argc);
 	if (array.array_a)
